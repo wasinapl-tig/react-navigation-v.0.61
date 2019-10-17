@@ -40,7 +40,7 @@ User:{
 
 },
 {
-initialRouteName:'User'
+initialRouteName:'Home'
 })
 
 export default createAppContainer(AppNavigator);

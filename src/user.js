@@ -13,7 +13,7 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar,
+  StatusBar,Button
 } from 'react-native';
 
 import {
@@ -26,7 +26,21 @@ import {
 
 import {createAppContainer,createStackNavigator} from 'react-navigation';
 class UserScreen extends Component{
+
+    static navigationOptions={
+        title:"User",
+        headerStyle:{
+            backgroundColor:'#f4511e'
+
+        }
+    }
+
+
   render(){
+    //   console.log(this.props);
+    const userId=this.props.navigation.getParam('userId');
+      const userName=this.props.navigation.getParam('userName');
+        const userLastName=this.props.navigation.getParam('userLastName');
   return (
    <View style={{
      flex:1,
@@ -35,6 +49,13 @@ class UserScreen extends Component{
      backgroundColor:'white'
    }}>
      <Text>User Screens</Text>
+       <Text>userId:{userId}</Text>
+          <Text>userName:{userName}</Text>
+             <Text>userLastName:{userLastName}</Text>
+         <Button
+     title="Go Back"
+     onPress={()=>this.props.navigation.navigate('Home')}
+     />
    </View>
   );
   }

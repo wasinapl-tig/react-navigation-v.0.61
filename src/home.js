@@ -13,7 +13,7 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar,
+  StatusBar,Button
 } from 'react-native';
 
 import {
@@ -26,6 +26,10 @@ import {
 
 import {createAppContainer,createStackNavigator} from 'react-navigation';
 class HomeScreen extends Component{
+      static navigationOptions={
+        title:"Home"
+    }
+
   render(){
   return (
    <View style={{
@@ -35,6 +39,18 @@ class HomeScreen extends Component{
      backgroundColor:'white'
    }}>
      <Text>Home Screens </Text>
+     <Button
+     title="Go to User Screen"
+     onPress={()=>this.props.navigation.navigate('User',
+    {
+         userId:12,
+         userName:'Francis',
+         userLastName:'Joes'
+     })
+    }
+     />
+
+   
    </View>
   );
   }
